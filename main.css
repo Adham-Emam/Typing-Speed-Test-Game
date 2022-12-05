@@ -1,0 +1,136 @@
+:root {
+  --prussian-blue: #003049ff;
+  --maximum-red: #d62828ff;
+  --orange: #f77f00ff;
+  --maximum-yellow-red: #fcbf49ff;
+  --lemon-meringue: #eae2b7ff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--lemon-meringue);
+}
+.game .name {
+  background-color: var(--maximum-red);
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.container .message {
+  background-color: white;
+  color: var(--prussian-blue);
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+.container .message select {
+  padding: 5px;
+  margin: 0 5px;
+}
+.container .message select:focus {
+  outline: none;
+}
+.container .start {
+  background-color: var(--orange);
+  color: white;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.container .the-word {
+  color: var(--maximum-red);
+  font-size: 30px;
+  font-weight: bold;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  display: none;
+}
+.container .input {
+  color: var(--prussian-blue);
+  width: 80%;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px;
+  display: block;
+  margin: 20px auto;
+  padding: 20px;
+  border: 3px solid var(--maximum-red);
+}
+.container .input {
+  outline: none;
+}
+.container .upcoming-words {
+  background-color: white;
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.container .upcoming-words span {
+  background-color: var(--maximum-red);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.container .control {
+  background-color: white;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .message span,
+.container .control span {
+  color: var(--maximum-red);
+  font-weight: bold;
+  color: var(--maximum-red);
+}
+.container .finish {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+}
+.container .finish .won {
+  color: var(--maximum-yellow-red);
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.container .finish .won + button {
+  background-color: var(--orange);
+}
+.container .finish .lost {
+  color: var(--maximum-red);
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.container .finish button {
+  color: white;
+  background-color: var(--orange);
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
