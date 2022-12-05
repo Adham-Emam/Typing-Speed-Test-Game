@@ -111,6 +111,13 @@ body {
   display: none;
   flex-direction: column;
 }
+.container .ready {
+  color: var(--maximum-red);
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+}
 .container .finish .won {
   color: var(--maximum-yellow-red);
   font-size: 35px;

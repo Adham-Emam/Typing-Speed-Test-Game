@@ -42,6 +42,7 @@ const levels = {
 let startButton = document.querySelector(".start");
 let levelSelect = document.querySelector(".message #level");
 let LevelDuration = document.querySelector(".message .seconds");
+let readyMessage = document.querySelector(".ready");
 let theWord = document.querySelector(".the-word");
 let upcomingWords = document.querySelector(".upcoming-words");
 let input = document.querySelector(".input");
@@ -81,7 +82,7 @@ levelSelect.value = "Normal";
 LevelDuration.innerHTML = levels.Normal;
 timeLeft.innerHTML = levels.Normal;
 
-levelSelect.addEventListener("change", () => {
+function setTimer() {
   if (levelSelect.value == "Easy") {
     LevelDuration.innerHTML = levels.Easy;
     timeLeft.innerHTML = levels.Easy;
@@ -95,6 +96,10 @@ levelSelect.addEventListener("change", () => {
     LevelDuration.innerHTML = levels.Insane;
     timeLeft.innerHTML = levels.Insane;
   }
+}
+
+levelSelect.addEventListener("change", () => {
+  setTimer();
   window.localStorage.setItem("Difficulity", levelSelect.value);
 });
 
@@ -110,10 +115,15 @@ startButton.addEventListener("click", () => {
   startButton.remove();
   input.focus();
 
+  readyMessage.style.display = "block";
+  let readyDots = setInterval(() => {
+    readyMessage.innerHTML += ".";
+  }, 750);
+
   // Generate Words
   window.setTimeout(() => {
     generateRandomWord();
-  }, 2000);
+  }, 2750);
 });
 
 function generateRandomWord() {
@@ -139,18 +149,14 @@ function generateRandomWord() {
 }
 
 function startTime() {
-  if (levelSelect.value == "Easy") {
-    timeLeft.innerHTML = levels.Easy;
-  } else if (levelSelect.value == "Normal") {
-    timeLeft.innerHTML = levels.Normal;
-  } else if (levelSelect.value == "Hard") {
-    timeLeft.innerHTML = levels.Hard;
-  } else if (levelSelect.value == "Insane") {
-    timeLeft.innerHTML = levels.Insane;
-  }
+  setTimer();
+
+  readyMessage.remove();
+
   let selectedLevel = document.createElement("span");
   selectedLevel.textContent = levelSelect.value;
   levelSelect.replaceWith(selectedLevel);
+
   let start = setInterval(() => {
     timeLeft.innerHTML--;
     if (timeLeft.innerHTML == 0) {
