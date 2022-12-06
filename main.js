@@ -19,9 +19,6 @@ setInterval(() => {
 }, 750);
 
 // Remove Loading Screen
-setTimeout(() => {
-  loadingScreen.remove();
-}, 3000);
 
 const words = [
   "Hello",
@@ -85,6 +82,7 @@ for (const key in levels) {
 }
 
 window.onload = function () {
+  loadingScreen.remove();
   if (window.localStorage.getItem("Difficulity")) {
     levelSelect.value = window.localStorage.getItem("Difficulity");
     if (window.localStorage.getItem("Difficulity") == "Easy") {
