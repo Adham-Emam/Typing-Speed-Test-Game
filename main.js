@@ -1,3 +1,28 @@
+// Create Loading screen
+let loadingScreen = document.createElement("div");
+loadingScreen.classList.add("loading-screen");
+loadingIcon1 = document.createElement("span");
+loadingIcon1.classList.add("icon1");
+loadingIcon2 = document.createElement("span");
+loadingIcon2.classList.add("icon2");
+let loadingText = document.createElement("span");
+loadingText.classList.add("loading-text");
+loadingText.textContent = "Loading";
+loadingScreen.append(loadingIcon1);
+loadingScreen.append(loadingIcon2);
+loadingScreen.append(loadingText);
+document.body.append(loadingScreen);
+
+//loading Text Animation
+setInterval(() => {
+  loadingText.innerHTML += ".";
+}, 750);
+
+// Remove Loading Screen
+setTimeout(() => {
+  loadingScreen.remove();
+}, 3000);
+
 const words = [
   "Hello",
   "Programming",

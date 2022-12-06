@@ -14,6 +14,63 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--lemon-meringue);
 }
+.loading-screen {
+  background-color: var(--lemon-meringue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+}
+.loading-screen .icon1 {
+  border: 4px var(--maximum-red);
+  border-style: solid solid dotted dotted;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  animation: rotate 3s linear infinite;
+}
+.loading-screen .icon2 {
+  border: 4px var(--maximum-red);
+  border-style: solid dotted;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  animation: rotate-reverse 2s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -100%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+@keyframes rotate-reverse {
+  0% {
+    transform: translate(-50%, -125%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -125%) rotate(-360deg);
+  }
+}
+.loading-text {
+  color: var(--prussian-blue);
+  position: fixed;
+  font-size: 30px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .game .name {
   background-color: var(--maximum-red);
   color: white;
